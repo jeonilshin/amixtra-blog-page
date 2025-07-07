@@ -8,7 +8,6 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { myLoader } from "@/utils/all";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -18,28 +17,18 @@ export default function Navbar(props) {
     },
     {
       label: "About",
-      href: "/about"
-    },
-    {
-      label: "Contact",
-      href: "/contact"
+      href: "/post/introducing-amixtra"
     }
   ];
 
   const rightmenu = [
     {
-      label: "Archive",
+      label: "All Blogs",
       href: "/archive"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+      label: "Policies",
+      href: "https://www.amixtra.com/policies",
       external: true
     }
   ];
@@ -76,33 +65,25 @@ export default function Navbar(props) {
                   ))}
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
-                  <Link href="/" className="w-28 dark:hidden">
-                    {props.logo ? (
-                      <Image
-                        {...urlForImage(props.logo)}
-                        alt="Logo"
-                        priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
-                      />
-                    ) : (
-                      <span className="block text-center">
-                        Stablo
-                      </span>
-                    )}
+                  <Link href="/" className="w-20 sm:w-24 md:w-28 dark:hidden">
+                    <Image
+                      src="/img/logo.png"
+                      alt="Logo"
+                      priority={true}
+                      width={120}
+                      height={120}
+                      className="sm:w-[120px] md:w-[150px] w-[50px] h-auto"
+                    />
                   </Link>
-                  <Link href="/" className="hidden w-28 dark:block">
-                    {props.logoalt ? (
-                      <Image
-                        {...urlForImage(props.logoalt)}
-                        alt="Logo"
-                        priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
-                      />
-                    ) : (
-                      <span className="block text-center">
-                        Stablo
-                      </span>
-                    )}
+                  <Link href="/" className="hidden w-20 sm:w-24 md:w-28 dark:block">
+                    <Image
+                      src="/img/logo-dark.png"
+                      alt="Logo"
+                      priority={true}
+                      width={120}
+                      height={120}
+                      className="sm:w-[120px] md:w-[150px] w-[50px] h-auto"
+                    />
                   </Link>
                   <Disclosure.Button
                     aria-label="Toggle Menu"

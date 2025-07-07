@@ -7,35 +7,18 @@ async function sharedMetaData(params) {
   const settings = await getSettings();
 
   return {
-    // enable this for resolving opengraph image
-    // metadataBase: new URL(settings.url),
     title: {
       default:
         settings?.title ||
-        "Stablo - Blog Template for Next.js & Sanity CMS",
-      template: "%s | Stablo"
+        "Amixtra - Blog",
+      template: "%s | Amixtra"
     },
     description:
       settings?.description ||
-      "Stablo - popular open-source next.js and sanity blog template",
-    keywords: ["Next.js", "Sanity", "Tailwind CSS"],
-    authors: [{ name: "Surjith" }],
+      "Amixtra is a company dedicated to driving innovation and technological advancements for a better world.",
+    keywords: ["Amixtra Blog", "Amixtra", "Algebraing", "Blog"],
+    authors: [{ name: "Amixtra" }],
     canonical: settings?.url,
-    openGraph: {
-      images: [
-        {
-          url:
-            urlForImage(settings?.openGraphImage)?.src ||
-            "/img/opengraph.jpg",
-          width: 800,
-          height: 600
-        }
-      ]
-    },
-    twitter: {
-      title: settings?.title || "Stablo Template",
-      card: "summary_large_image"
-    },
     robots: {
       index: true,
       follow: true

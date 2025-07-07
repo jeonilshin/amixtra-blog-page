@@ -87,16 +87,12 @@ function Categories({ categories }) {
       <ul className="mt-4 grid">
         {categories.map((item, index) => (
           <li key={item._id}>
-            <Link
-              href={`/category/${item.slug.current}`}
-              className="flex items-center justify-between py-2">
-              <h4 className="text-gray-800 dark:text-gray-400">
-                {item.title}
-              </h4>
-              <Label pill={true} color={item.color}>
-                {item.count}
-              </Label>
-            </Link>
+            <h4 className="text-gray-800 dark:text-gray-400">
+              {item.title}
+            </h4>
+            <Label pill={true} color={item.color}>
+              {item.count}
+            </Label>
           </li>
         ))}
       </ul>
